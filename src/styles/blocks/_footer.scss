@@ -1,0 +1,28 @@
+.footer {
+  padding: $spacing-lg 0;
+  background-color: $bg-dark;
+  color: white;
+  
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-md;
+    
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  &__logo {
+    .logo {
+      color: white;
+    }
+  }
+  
+  &__copyright {
+    font-size: 14px;
+    color: rgba(white, 0.7);
+  }
+}

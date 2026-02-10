@@ -1,0 +1,123 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: $shadow-sm;
+  z-index: $z-header;
+  
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md 0;
+    gap: $spacing-lg;
+    
+    @media (max-width: $breakpoint-laptop) {
+      gap: $spacing-md;
+    }
+  }
+  
+  &__logo {
+    flex-shrink: 0;
+  }
+  
+  &__nav {
+    @media (max-width: $breakpoint-laptop) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
+      background-color: white;
+      box-shadow: $shadow-lg;
+      transform: translateX(100%);
+      transition: transform $transition-base;
+      padding: $spacing-xxl $spacing-md $spacing-md;
+      
+      &--active {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    
+    @media (max-width: $breakpoint-laptop) {
+      display: none;
+    }
+  }
+  
+  &__phone {
+    font-weight: 600;
+    color: $primary;
+    transition: color $transition-fast;
+    white-space: nowrap;
+    
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+  
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    z-index: $z-header + 1;
+    
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: $text-primary;
+      border-radius: 2px;
+      transition: all $transition-base;
+    }
+    
+    &--active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+      
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+    
+    @media (max-width: $breakpoint-laptop) {
+      display: flex;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  gap: $spacing-lg;
+  
+  @media (max-width: $breakpoint-laptop) {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+  
+  &__item {
+    // No additional styles needed
+  }
+  
+  &__link {
+    font-weight: 500;
+    color: $text-primary;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary;
+    }
+  }
+}

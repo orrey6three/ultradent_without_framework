@@ -1,0 +1,18 @@
+{
+  "name": "ultra-dent-landing",
+  "version": "1.0.0",
+  "description": "Лендинг стоматологической клиники Ультра-дент",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["landing", "dental", "clinic"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "sass": "^1.69.5"
+  }
+}

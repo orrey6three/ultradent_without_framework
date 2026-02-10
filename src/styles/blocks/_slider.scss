@@ -1,0 +1,97 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px;
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 40px;
+  }
+  
+  &__track {
+    display: flex;
+    gap: $spacing-md;
+    transition: transform $transition-base;
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  
+  &__slide {
+    flex-shrink: 0;
+  }
+  
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: $shadow-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-primary;
+    transition: all $transition-fast;
+    z-index: 10;
+    
+    &:hover:not(:disabled) {
+      background-color: $primary;
+      color: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+    
+    &:disabled,
+    &--disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    
+    &--prev {
+      left: 0;
+    }
+    
+    &--next {
+      right: 0;
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+      width: 36px;
+      height: 36px;
+      
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xs;
+    margin-top: $spacing-lg;
+  }
+  
+  &__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $border-color;
+    transition: all $transition-fast;
+    padding: 0;
+    
+    &:hover {
+      background-color: darken($border-color, 20%);
+    }
+    
+    &--active {
+      width: 30px;
+      border-radius: 5px;
+      background-color: $primary;
+    }
+  }
+}

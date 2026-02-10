@@ -1,0 +1,24 @@
+// Base
+@import './base/variables';
+@import './base/reset';
+@import './base/typography';
+@import './base/global';
+
+// Components
+@import './components/button';
+@import './components/modal';
+@import './components/form';
+@import './components/toast';
+
+// Blocks
+@import './blocks/header';
+@import './blocks/hero';
+@import './blocks/promo';
+@import './blocks/timer';
+@import './blocks/coupons';
+@import './blocks/services';
+@import './blocks/reviews';
+@import './blocks/slider';
+@import './blocks/contacts';
+@import './blocks/footer';
+@import './blocks/quiz';

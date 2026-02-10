@@ -1,0 +1,23 @@
+.promo {
+  padding: $spacing-xxl 0;
+  background-color: $bg-secondary;
+  
+  @media (max-width: $breakpoint-tablet) {
+    padding: $spacing-xl 0;
+  }
+  
+  &__timer {
+    margin-bottom: $spacing-xl;
+  }
+  
+  &__timer-title {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+    font-size: 24px;
+    color: $text-primary;
+  }
+  
+  &__coupons {
+    // No additional styles needed
+  }
+}

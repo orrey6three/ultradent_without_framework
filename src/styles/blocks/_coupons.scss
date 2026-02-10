@@ -1,0 +1,65 @@
+.coupons {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-xl;
+  background: white;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-md;
+  text-align: center;
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-lg;
+  }
+  
+  &__info {
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__title {
+    margin-bottom: $spacing-sm;
+    color: $text-primary;
+  }
+  
+  &__description {
+    color: $text-secondary;
+    margin-bottom: $spacing-md;
+  }
+  
+  &__counter {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-md;
+    background-color: $bg-secondary;
+    border-radius: $border-radius-lg;
+    font-size: 18px;
+  }
+  
+  &__label {
+    font-weight: 500;
+  }
+  
+  &__count {
+    font-size: 32px;
+    font-weight: 700;
+    color: $primary;
+    
+    &--low {
+      color: $warning;
+      animation: pulse 1s infinite;
+    }
+    
+    &--empty {
+      color: $error;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,131 @@
+.quiz {
+  &__question {
+    display: none;
+    animation: fadeIn $transition-base;
+    
+    &.active {
+      display: block;
+    }
+  }
+  
+  &__question-title {
+    margin-bottom: $spacing-lg;
+    text-align: center;
+    color: $text-primary;
+  }
+  
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__option {
+    position: relative;
+    display: block;
+    padding: $spacing-md;
+    border: 2px solid $border-color;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    transition: all $transition-fast;
+    
+    input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      
+      &:checked + .quiz__option-text {
+        &::before {
+          background-color: $primary;
+          border-color: $primary;
+        }
+        
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    
+    &:hover {
+      border-color: $primary;
+      background-color: rgba($primary, 0.05);
+    }
+    
+    input[type="radio"]:checked ~ & {
+      border-color: $primary;
+      background-color: rgba($primary, 0.1);
+    }
+  }
+  
+  &__option-text {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: 16px;
+    color: $text-primary;
+    
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $border-color;
+      border-radius: 50%;
+      transition: all $transition-fast;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 22px;
+      width: 8px;
+      height: 8px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity $transition-fast;
+    }
+  }
+  
+  &__navigation {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+  }
+  
+  &__progress {
+    text-align: center;
+  }
+  
+  &__progress-bar {
+    width: 100%;
+    height: 6px;
+    background-color: $bg-secondary;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, $primary 0%, $primary-light 100%);
+    transition: width $transition-base;
+  }
+  
+  &__progress-text {
+    font-size: 14px;
+    color: $text-secondary;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

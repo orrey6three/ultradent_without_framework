@@ -1,0 +1,37 @@
+body {
+  background-color: $bg-primary;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 $spacing-sm;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  color: $text-primary;
+  
+  @media (max-width: $breakpoint-tablet) {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: $primary;
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 20px;
+  }
+}
+
+.required {
+  color: $error;
+}
